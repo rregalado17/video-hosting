@@ -12,6 +12,8 @@ const localRawVideoPath = "./raw-vids";
 const localProcessedVideoPath = "./processed-vids";
 
 export function setupDirectories() {
+    ensureDirectoryExist(localRawVideoPath)
+    ensureDirectoryExist(localProcessedVideoPath)
      
 }
 
@@ -77,4 +79,11 @@ function deleteFile(filePath: string): Promise<void> {
             resolve();
         }
     })
+}
+
+function ensureDirectoryExist(dirPath: string) {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+        console.log(`Directory created at ${dirPath}`);
+    }
 }
