@@ -6,7 +6,7 @@ import { resolve } from "path";
 const storage = new Storage()
 
 const rawVideoBucketName = "rr-raw-video-hosting";
-const processedVideoBucketName = "rr-processed-video=hosting";
+const processedVideoBucketName = "rr-processed-video-hosting";
 
 const localRawVideoPath = "./raw-vids";
 const localProcessedVideoPath = "./processed-vids";
